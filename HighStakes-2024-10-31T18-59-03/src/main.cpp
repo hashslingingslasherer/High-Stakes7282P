@@ -8,14 +8,28 @@
 /*----------------------------------------------------------------------------*/
 
 // ---- START VEXCODE CONFIGURED DEVICES ----
-// ---- END VEXCODE CONFIGUREDasdfasdfasdfasdf DEVICES ----
-
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Controller1          controller                    
+// ---- END VEXCODE CONFIGURED DEVICES ----
 #include "vex.h"
-
 using namespace vex;
 
+void autonomousControl()
+{
+  ;
+}
+void driverControl()
+{
+  ;
+}
 int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
-  vexcodeInit();
+  vexcodeInit(); //Doesn't currently have anything bound to it
+
+  //creates competition object, used automatically by the program
+  competition Competition;
   
+  Competition.autonomous(autonomousControl);
+  Competition.drivercontrol(driverControl);
 }
