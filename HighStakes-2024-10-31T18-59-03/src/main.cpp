@@ -28,8 +28,5 @@ int main() {
   vexcodeInit(); //Doesn't currently have anything bound to it
 
   //creates competition object, used automatically by the program
-  competition Competition;
   
-  Competition.autonomous(autonomousControl);
-  Competition.drivercontrol(driverControl);
 }

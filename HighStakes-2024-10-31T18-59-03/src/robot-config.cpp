@@ -15,6 +15,7 @@ motor backLeft = motor(PORT3,true);
 motor topRight = motor(PORT4,false);
 motor midRight = motor(PORT5,false);
 motor backRight= motor(PORT6,false);
+competition Competition= competition();
 // VEXcode generated functions
 // define variable for remote controller enable/disable
 bool RemoteControlCodeEnabled = true;
@@ -25,5 +26,6 @@ bool RemoteControlCodeEnabled = true;
  * This should be called at the start of your int main function.
  */
 void vexcodeInit( void ) {
-  // nothing to initialize
+  Competition.autonomous(autonomousControl());
+  Competition.drivercontrol(driverControl());
 }

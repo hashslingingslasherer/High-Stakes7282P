@@ -1,3 +1,4 @@
+#pragma once
 using namespace vex;
 
 extern brain Brain;
@@ -17,4 +18,7 @@ extern motor_group rightGroup;
  * 
  * This should be called at the start of your int main function.
  */
+extern competition Competition;
+void autonomousControl();
+void driverControl();
 void  vexcodeInit( void );
