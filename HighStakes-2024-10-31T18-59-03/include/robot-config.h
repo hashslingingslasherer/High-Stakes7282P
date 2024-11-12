@@ -13,6 +13,7 @@ extern motor midRight;
 extern motor backRight;
 extern motor_group leftGroup;
 extern motor_group rightGroup;
+extern motor_group allMotors;
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
  * 

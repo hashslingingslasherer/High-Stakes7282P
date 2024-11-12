@@ -14,12 +14,16 @@ motor midLeft = motor(PORT2,true);
 motor backLeft = motor(PORT3,true);
 motor topRight = motor(PORT4,false);
 motor midRight = motor(PORT5,false);
-motor backRight= motor(PORT6,false);
+motor backRight= motor(PORT6,false);  
 motor_group leftGroup = motor_group(topLeft,midLeft,backLeft);
 motor_group rightGroup = motor_group(topRight,midRight,backRight);
+motor_group allMotors = motor_group(topLeft,midLeft,backLeft,topRight,midRight,backRight);
 competition Competition= competition();
-// VEXcode generated functions
-// define variable for remote controller enable/disable
+
+
+
+// define variable for remote controller ena
+// VEXcode generated functionsble/disable
 bool RemoteControlCodeEnabled = true;
 
 /**
@@ -31,3 +35,5 @@ void vexcodeInit( void ) {
   Competition.autonomous(autonomousControl);
   Competition.drivercontrol(driverControl);
 }
+
+//testing velocities and motors

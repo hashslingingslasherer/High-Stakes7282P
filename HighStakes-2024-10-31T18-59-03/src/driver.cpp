@@ -6,6 +6,7 @@ void driverControl()
   {
     rightGroup.spin(forward, Controller.Axis1.position(), percent);
     leftGroup.spin(forward, Controller.Axis3.position(), percent);
+    wait(20,msec);
   }
   
 }
