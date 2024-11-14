@@ -14,6 +14,8 @@ extern motor backRight;
 extern motor_group leftGroup;
 extern motor_group rightGroup;
 extern motor_group allMotors;
+extern motor intake;
+extern optical colorSensor;
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
  * 
