@@ -24,3 +24,6 @@ void driverControl()
   Controller.ButtonR2.pressed(intakeDown);
   
 }
+void driveForward(){
+  rightGroup.spinFor(1,sec);
+}
