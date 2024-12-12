@@ -2,9 +2,9 @@
 #include "utils.h"
 
 double vel = 30;
-
+double moveMulti=1;
+double rmulti=1; //roughly based on the coefficient of friction of the floor
 void autonomousControl()
 {
-allMotors.setVelocity(30, percent);
-allMotors.spinFor(forward,5,rotationUnits::rev,true);
+
 }
