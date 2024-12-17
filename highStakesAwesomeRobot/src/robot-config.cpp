@@ -41,8 +41,8 @@ bool RemoteControlCodeEnabled = true;
  * This should be called at the start of your int main function.
  */
 void vexcodeInit( void ) {
-  Competition.autonomous(autonomousControl);
-  Competition.drivercontrol(driverControl);
+
 }
+
 
 //testing velocities and motors

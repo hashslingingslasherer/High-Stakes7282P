@@ -19,6 +19,9 @@ using namespace vex;
 int main() {
   vexDisplayPrintf(10,10,10,"sigma sigma rizz skibid rightGroup");
   // Initializing Robot Configuration. DO NOT REMOVE!
-  vexcodeInit(); //Doesn't currently have anything bound to it
+  vexcodeInit(); //behind the scenes essential
+  Competition.autonomous(autonomousControl);
+  Competition.drivercontrol(driverControl);
+  
   driveForward(); //test function for connection
 }
