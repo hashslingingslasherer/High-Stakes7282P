@@ -17,6 +17,7 @@ using namespace vex;
 
 //PORTS ARE CURRENTLY NOT CORRECT, ATTACHED ONE TO PORT 12 FOR TESTING PURPOSES
 int main() {
+  
   vexDisplayPrintf(10,10,10,"sigma sigma rizz skibid rightGroup");
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit(); //behind the scenes essential

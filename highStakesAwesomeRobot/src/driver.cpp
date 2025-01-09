@@ -1,5 +1,14 @@
 #include "vex.h"
 #include "utils.h"
+void pneumat()
+{
+
+  grabber.set(true);
+}
+void pneumatOff()
+{
+  grabber.set(false);
+}
 void intakeUp()
 {
 intake.spin(forward,90,percent);
@@ -18,6 +27,8 @@ void leftSpin()
 }
 void driverControl()
 {
+  Controller.ButtonL1.pressed(pneumat);
+  Controller.ButtonL1.released(pneumatOff);
   Controller.Axis1.changed(rightSpin);
   Controller.Axis3.changed(leftSpin);
   Controller.ButtonR1.pressed(intakeUp);

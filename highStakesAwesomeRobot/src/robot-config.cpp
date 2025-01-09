@@ -21,10 +21,10 @@ motor_group leftGroup = motor_group(topLeft,midLeft,backLeft);
 motor_group rightGroup = motor_group(topRight,midRight,backRight);
 motor_group allMotors = motor_group(topLeft,midLeft,backLeft,topRight,midRight,backRight);
 optical colorSensor = optical(PORT8);
+pneumatics grabber=pneumatics(Brain.ThreeWirePort.A);
 //Intake Motors
 drivetrain Drivetrain=drivetrain(leftGroup,rightGroup,259.338473,307.5,266,mm,1);
 motor intake = motor(PORT7, true); //press, intake starts (direction might have to change)
-
 
 
 competition Competition= competition();
