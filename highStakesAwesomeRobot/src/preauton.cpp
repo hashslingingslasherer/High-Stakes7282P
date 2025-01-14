@@ -1,29 +1,19 @@
 #include "vex.h"
 #include "utils.h"
-
-
-/*
-bool enabled=false;
-void checkForButtons(){
-if (Brain.Screen.xPosition()&Brain.Screen.yPosition())
-{
-
-}
-}
-
+void (*functionPointer)();
 void preauton()
 {
-
-    void (*selectedAuton)();
-    void(*selectedDriver)()=driverControl;
-    Brain.Screen.setPenColor(blue);
-    Brain.Screen.setFillColor(purple);
-    Brain.Screen.drawRectangle(10,10,20,20);
-    Brain.Screen.drawRectangle(40,10,20,20);
-    Brain.Screen.released(checkForButtons);
-    while (!enabled)
+    while(1)
     {
-        ;
+        if(Controller.ButtonL1.pressing())
+        {
+            if(functionPointer!=&autonomousBlueRight)
+            {
+            functionPointer=&autonomousBlueRight;
+            Controller.Screen.clearLine();
+            Controller.Screen.print("autonBlueRight selected ;)");
+            }
+        }
     }
+
 }
-*/

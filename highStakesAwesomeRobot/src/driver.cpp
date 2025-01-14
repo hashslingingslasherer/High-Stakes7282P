@@ -1,5 +1,6 @@
 #include "vex.h"
 #include "utils.h"
+
 void pneumat()
 {
 
@@ -11,12 +12,19 @@ void pneumatOff()
 }
 void intakeUp()
 {
+while(Controller.ButtonR1.pressing())
+{
 intake.spin(forward,90,percent);
+}
 }
 void intakeDown()
 {
+while(Controller.ButtonR2.pressing())
+{
 intake.spin(forward,-90,percent);
 }
+}
+
 void rightSpin()
 {
   rightGroup.spin(forward, Controller.Axis1.position(), percent); //right group spins
@@ -33,7 +41,6 @@ void driverControl()
   Controller.Axis3.changed(leftSpin);
   Controller.ButtonR1.pressed(intakeUp);
   Controller.ButtonR2.pressed(intakeDown);
-  
 }
 void driveForward(){
   rightGroup.spinFor(1,sec);

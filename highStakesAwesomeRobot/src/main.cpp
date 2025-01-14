@@ -21,7 +21,7 @@ int main() {
   vexDisplayPrintf(10,10,10,"sigma sigma rizz skibid rightGroup");
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit(); //behind the scenes essential
-  Competition.autonomous(autonomousControl);
+  Competition.autonomous(functionPointer);
   Competition.drivercontrol(driverControl);
   
   driveForward(); //test function for connection
