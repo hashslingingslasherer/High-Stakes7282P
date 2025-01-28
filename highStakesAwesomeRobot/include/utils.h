@@ -4,4 +4,5 @@ void autonomousBlueRight();
 void driverControl();
 void  vexcodeInit();
 void driveForward();
-void (*functionPointer)();
+extern void (*functionPointer)();
+void preauton();

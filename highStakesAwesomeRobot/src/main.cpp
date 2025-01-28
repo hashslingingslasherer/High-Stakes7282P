@@ -17,12 +17,15 @@ using namespace vex;
 
 //PORTS ARE CURRENTLY NOT CORRECT, ATTACHED ONE TO PORT 12 FOR TESTING PURPOSES
 int main() {
-  
   vexDisplayPrintf(10,10,10,"sigma sigma rizz skibid rightGroup");
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit(); //behind the scenes essential
+  while(Competition.isEnabled()==false)
+  {
+    driverControl();
+  }
   Competition.autonomous(functionPointer);
   Competition.drivercontrol(driverControl);
-  
+
   driveForward(); //test function for connection
 }

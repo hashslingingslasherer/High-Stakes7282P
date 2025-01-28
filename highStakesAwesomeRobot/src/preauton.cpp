@@ -1,6 +1,6 @@
 #include "vex.h"
 #include "utils.h"
-void (*functionPointer)();
+void (*functionPointer)()=nullptr;
 void preauton()
 {
     while(1)
@@ -11,7 +11,7 @@ void preauton()
             {
             functionPointer=&autonomousBlueRight;
             Controller.Screen.clearLine();
-            Controller.Screen.print("autonBlueRight selected ;)");
+            Controller.Screen.print("autonBlueRight selected, PLACE READY TO GRAB");
             }
         }
     }

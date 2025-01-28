@@ -11,12 +11,12 @@ brain  Brain;
 
 //Movement Control Motors and Motor Groups
 controller Controller = controller(primary);
-motor topLeft = motor(PORT1,true);
-motor midLeft = motor(PORT2,true);
-motor backLeft = motor(PORT3,true);
-motor topRight = motor(PORT12,false);
-motor midRight = motor(PORT5,false);
-motor backRight= motor(PORT6,false);  
+motor topLeft = motor(PORT12,true);
+motor midLeft = motor(PORT13,true);
+motor backLeft = motor(PORT14,true);
+motor topRight = motor(PORT16,false);
+motor midRight = motor(PORT17,false);
+motor backRight= motor(PORT18,false);  
 motor_group leftGroup = motor_group(topLeft,midLeft,backLeft);
 motor_group rightGroup = motor_group(topRight,midRight,backRight);
 motor_group allMotors = motor_group(topLeft,midLeft,backLeft,topRight,midRight,backRight);
