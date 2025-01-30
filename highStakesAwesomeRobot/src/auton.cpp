@@ -6,13 +6,13 @@ double moveMulti=1;
 double rmulti=1; //roughly based on the coefficient of friction of the floor
 double red1=-1;
 //BLUE RIGHT SIDE
-void autonomousBlueRight()
+void autonomousBlueLeft()
 {
 //drive forward
 Drivetrain.setDriveVelocity(90,percent);
 Drivetrain.setStopping(hold);
 //backwards
-Drivetrain.driveFor(-2000,mm,true);
+Drivetrain.driveFor(-1350,mm,true);
 //clamp down
 grabber.open();
 intake.spin(forward);
@@ -34,47 +34,44 @@ Drivetrain.setStopping(hold);
 
 Drivetrain.setDriveVelocity(90,percent);
 //drive forward
-Drivetrain.driveFor(-250,mm,true); //dependent
+Drivetrain.driveFor(-100,mm,true); //dependent
 //turn left
 Drivetrain.turnFor(90,degrees,true);
 //facing north
 
 grabber.close();
-
+Drivetrain.turnFor(-90,degrees);
+Drivetrain.driveFor(-500,mm);
+grabber.open();
+Drivetrain.driveFor(-100,mm);
+Drivetrain.turnFor(90, degrees);
 intake.spinFor(2,sec);
 Drivetrain.driveFor(500,mm,true);
 
-Drivetrain.driveFor(-500,mm,true);
-Drivetrain.turnFor(-90,deg,true);
-Drivetrain.driveFor(-500,mm,true);
-grabber.open();
-intake.spin(forward);
-wait(1,seconds);
-Drivetrain.turnFor(-45,degrees);
-Drivetrain.driveFor(500,mm,true);
 
 
 
 }
 
-void autonomousRedLeft()
+void autonomousRedRight()
 {
-    Drivetrain.setDriveVelocity(90, percent);
+//drive forward
+Drivetrain.setDriveVelocity(90,percent);
 Drivetrain.setStopping(hold);
 //backwards
-Drivetrain.driveFor(-2000, mm, true);
+Drivetrain.driveFor(-1350,mm,true);
 //clamp down
 grabber.open();
 intake.spin(forward);
 //drive backwards assuming a tug of war
-Drivetrain.setDriveVelocity(100, percent);
+Drivetrain.setDriveVelocity(100,percent);
 Drivetrain.drive(forward);
 Drivetrain.setStopping(coast);
 //assume that they will be driving backwards for less than 2 seconds
 //and we'll make them get an infraction
-wait(.8, seconds);
+wait(.8,seconds);
 Drivetrain.setDriveVelocity(30, percent);
-wait(1.2, seconds);
+wait(1.2,seconds);
 Drivetrain.stop();
 intake.stop();
 wait(.4, seconds);
@@ -82,25 +79,45 @@ wait(.4, seconds);
 Drivetrain.setStopping(hold);
 // return to normalcy
 
-Drivetrain.setDriveVelocity(90, percent);
+Drivetrain.setDriveVelocity(90,percent);
 //drive forward
-Drivetrain.driveFor(-250, mm, true); //dependent
+Drivetrain.driveFor(-100,mm,true); //dependent
 //turn left
-Drivetrain.turnFor(90 * red1, degrees, true);  // Modified line
+Drivetrain.turnFor(90*red1,degrees,true);
 //facing north
 
 grabber.close();
-
-intake.spinFor(2, sec);
-Drivetrain.driveFor(500, mm, true);
-
-Drivetrain.driveFor(-500, mm, true);
-Drivetrain.turnFor(-90 * red1, deg, true);  // Modified line
-Drivetrain.driveFor(-500, mm, true);
+Drivetrain.turnFor(-90*red1,degrees);
+Drivetrain.driveFor(-500,mm);
 grabber.open();
-intake.spin(forward);
-wait(1, seconds);
-Drivetrain.turnFor(-45 * red1, degrees);  // Modified line
-Drivetrain.driveFor(500, mm, true);
+Drivetrain.driveFor(-100,mm);
+Drivetrain.turnFor(90*red1, degrees);
+intake.spinFor(2,sec);
+Drivetrain.driveFor(500,mm,true);
 
+
+}
+void autonomousBlueRight()
+{
+Drivetrain.driveFor(-950,mm);
+grabber.open();
+intake.spinFor(2,seconds);
+Drivetrain.driveFor(-200,mm);
+Drivetrain.turnFor(90,degrees);
+intake.spinFor(5,seconds);
+Drivetrain.driveFor(400,mm);
+Drivetrain.turnFor(160,degrees);
+Drivetrain.driveFor(-400,mm);
+}
+void autonomousRedLeft()
+{
+Drivetrain.driveFor(-950,mm);
+grabber.open();
+intake.spinFor(2,seconds);
+Drivetrain.driveFor(-200,mm);
+Drivetrain.turnFor(90*red1,degrees);
+intake.spinFor(5,seconds);
+Drivetrain.driveFor(400,mm);
+Drivetrain.turnFor(160*red1,degrees);
+Drivetrain.driveFor(-400,mm);
 }
