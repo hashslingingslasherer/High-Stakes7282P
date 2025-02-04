@@ -35,6 +35,7 @@ void leftSpin()
 }
 void driverControl()
 {
+  Brain.Screen.print("driver");
   Controller.ButtonL1.pressed(pneumat);
   Controller.ButtonL1.released(pneumatOff);
   Controller.Axis1.changed(rightSpin);

@@ -1,46 +1,58 @@
 #include "vex.h"
 #include "utils.h"
 void (*functionPointer)()=nullptr;
+bool active=true;
+int num=0;
+void increment(){
+num++;
+if(num>4)
+num=1;
+}
+void preCheck()
+{
+    if(active)
+    {
+    increment();
+        switch(num)
+        {
+        case 1 :
+{
+            functionPointer = &autonomousBlueLeft;
+            Brain.Screen.clearLine();
+            Brain.Screen.print("auton blue left");
+            break;
+}
+        case 2 :{
+
+                functionPointer = &autonomousBlueRight;
+                Brain.Screen.clearLine();
+                Brain.Screen.print("auton blue right");
+                break;
+        }
+      
+        case 3:{
+                functionPointer = &autonomousRedRight;
+                Brain.Screen.clearLine();
+                Brain.Screen.print("auton red right");
+                break;
+        }
+
+        case 4:{
+                functionPointer = &autonomousRedLeft;
+                Brain.Screen.clearLine();
+                Brain.Screen.print("auton red left");
+            }
+
+
+
+
+}
+}
+}
 void preauton()
 {
-    while(1)
-    {
-        if(Controller.ButtonL1.pressing())
-        {
-            if(functionPointer!=&autonomousBlueLeft)
-            {
-            functionPointer=&autonomousBlueLeft;
-            Controller.Screen.clearLine();
-            Controller.Screen.print("autonBlueRight selected");
-            }
-        }
-        if(Controller.ButtonL2.pressing())
-        {
-            if(functionPointer!=&autonomousBlueRight)
-            {
-                functionPointer=&autonomousBlueRight;
-                Controller.Screen.clearLine();
-                Controller.Screen.print("auton blue right");
-            }
-        }
-        if(Controller.ButtonR1.pressing())
-        {
-            if(functionPointer!=&autonomousRedRight)
-            {
-                functionPointer=&autonomousRedRight;
-                Controller.Screen.clearLine();
-                Controller.Screen.print("auton red right");
-            }
-        }
-        if(Controller.ButtonR2.pressing())
-        {
-            if(functionPointer!=&autonomousRedLeft)
-            {
-                functionPointer=&autonomousRedLeft;
-                Controller.Screen.clearLine();
-                Controller.Screen.print("auton red left");
-            }
-        }
-    }
-
+    
+    Brain.Screen.pressed(preCheck);
+    
+   
 }

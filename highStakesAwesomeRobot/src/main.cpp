@@ -17,15 +17,24 @@ using namespace vex;
 
 //PORTS ARE CURRENTLY NOT CORRECT, ATTACHED ONE TO PORT 12 FOR TESTING PURPOSES
 int main() {
-  vexDisplayPrintf(10,10,10,"sigma sigma rizz skibid rightGroup");
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit(); //behind the scenes essential
-  while(Competition.isEnabled()==false)
-  {
-    driverControl();
-  }
-  Competition.autonomous(functionPointer);
+  //while(Competition.isEnabled()==false)
+  //{
+  //  driverControl();
+  //}
+  
+  
+  Brain.Screen.setCursor(1,1);
+
   Competition.drivercontrol(driverControl);
+  preauton();
+  Brain.Screen.print("DO PREAUTON");
+  wait(10,sec);
+  active=false;
+  Brain.Screen.print(" <----------PREAUTON SELECTED");
+  Competition.autonomous(functionPointer);
+
 
   driveForward(); //test function for connection
 }

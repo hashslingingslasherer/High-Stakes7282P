@@ -8,6 +8,8 @@ double red1=-1;
 //BLUE RIGHT SIDE
 void autonomousBlueLeft()
 {
+Brain.Screen.clearLine();
+Brain.Screen.print("ABL RUN");
 //drive forward
 Drivetrain.setDriveVelocity(90,percent);
 Drivetrain.setStopping(hold);
@@ -55,6 +57,8 @@ Drivetrain.driveFor(500,mm,true);
 
 void autonomousRedRight()
 {
+Brain.Screen.clearLine();
+Brain.Screen.print("ARR RUN");
 //drive forward
 Drivetrain.setDriveVelocity(90,percent);
 Drivetrain.setStopping(hold);
@@ -99,6 +103,8 @@ Drivetrain.driveFor(500,mm,true);
 }
 void autonomousBlueRight()
 {
+Brain.Screen.clearLine();
+Brain.Screen.print("ABR RUN");
 Drivetrain.driveFor(-950,mm);
 grabber.open();
 intake.spinFor(2,seconds);
@@ -111,6 +117,8 @@ Drivetrain.driveFor(-400,mm);
 }
 void autonomousRedLeft()
 {
+Brain.Screen.clearLine();
+Brain.Screen.print("ARL run");
 Drivetrain.driveFor(-950,mm);
 grabber.open();
 intake.spinFor(2,seconds);
