@@ -6,6 +6,13 @@ double moveMulti=1;
 double rmulti=1; //roughly based on the coefficient of friction of the floor
 double red1=-1;
 //BLUE RIGHT SIDE
+void crappyAuton()
+{
+    Drivetrain.setDriveVelocity(90,percent);
+    Drivetrain.driveFor(-600,mm,true);
+    grabber.open();
+    Drivetrain.driveFor(600,mm);
+}
 void autonomousBlueLeft()
 {
 Brain.Screen.clearLine();

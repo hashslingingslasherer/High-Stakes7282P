@@ -28,12 +28,12 @@ int main() {
   Brain.Screen.setCursor(1,1);
 
   Competition.drivercontrol(driverControl);
-  preauton();
+  //preauton();
   Brain.Screen.print("DO PREAUTON");
   wait(10,sec);
-  active=false;
+  //active=false;
   Brain.Screen.print(" <----------PREAUTON SELECTED");
-  Competition.autonomous(functionPointer);
+  Competition.autonomous(crappyAuton);
 
 
   driveForward(); //test function for connection

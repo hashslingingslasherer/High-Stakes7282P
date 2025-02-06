@@ -13,3 +13,4 @@ void increment();
 extern void (*functionPointer)();
 void preauton();
 extern bool active;
+void crappyAuton();
